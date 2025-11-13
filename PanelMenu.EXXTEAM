@@ -1,3 +1,10 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/PanelMenuRBLX.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/FiturSprintUi"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/PanelMenuServerHOP%20AND%20JOB%20ID"))()
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local topbar = player.PlayerGui:WaitForChild("TopbarStandard"):WaitForChild("Holders")
+
+topbar.Position = UDim2.new(0, 0, 0, -600)
+topbar.Position = UDim2.new(0, 0, 0, 0)
