@@ -1,2 +1,3 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/PanelMenuRBLX.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/FiturSprintUi"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/iW6LbXSa"))()
