@@ -1,0 +1,6 @@
+local pg = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local ui = pg:FindFirstChild("RobloxMenuExxHub")
+
+if ui then
+    ui:Destroy()
+end
