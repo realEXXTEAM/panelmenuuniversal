@@ -1,7 +1,7 @@
 -- TopBar Panel
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/PanelMenuRBLX.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/FiturSprintUi"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/NotifikasiJUM'ATAAN"))()
+loadstring(game:HttpGet("https://pastefy.app/OoTicEAt/raw"))()
 
 -- Ui Blox Fruit Hide
 loadstring(game:HttpGet("https://pastebin.com/raw/iW6LbXSa"))()
