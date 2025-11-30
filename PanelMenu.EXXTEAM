@@ -3,7 +3,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenu
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/FiturSprintUi"))()
 loadstring(game:HttpGet("https://pastefy.app/OoTicEAt/raw"))()
 
-wait(10)
 
 -- Ui Blox Fruit Hide
 loadstring(game:HttpGet("https://pastebin.com/raw/iW6LbXSa"))()
