@@ -2,6 +2,7 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/PanelMenuRBLX.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/FiturSprintUi"))()
 loadstring(game:HttpGet("https://pastefy.app/OoTicEAt/raw"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/menurobloxpanelExxHub/refs/heads/main/AnimChangerUI"))()
 
 
 -- Ui Blox Fruit Hide
