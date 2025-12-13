@@ -8,4 +8,3 @@ getgenv()._PanelMenuRan = true
 
 -- Load Script
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/PanelMenuRBLX.lua"))()
-loadstringgame:HttpGet("https://pastebin.com/raw/p7FgA3Vs"))()
