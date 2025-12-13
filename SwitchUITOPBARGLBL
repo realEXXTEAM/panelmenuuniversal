@@ -1,0 +1,19 @@
+-- Blox Fruits Only
+local allowed = {
+    [2753915549] = true, -- Sea 1
+    [4442272183] = true, -- Sea 2
+    [7449423635] = true  -- Sea 3
+}
+
+if not allowed[game.PlaceId] then return end
+
+local lp = game:GetService("Players").LocalPlayer
+local pg = lp:WaitForChild("PlayerGui")
+
+pcall(function()
+    pg.RobloxMenuExxHubGLBL.Frame.Position = UDim2.new(1, -185, 0, 60)
+    pg.RobloxMenuExxHubGLBL.TextButton.Position = UDim2.new(1, -112, 0, 8)
+
+    pg.ServerToolsUI.ToggleButton.Position = UDim2.new(0, 170, 0, 8)
+    pg.ServerToolsUI.Frame.Position = UDim2.new(0, 115, 0, 60)
+end)
