@@ -1,0 +1,4 @@
+game:GetService("Players").LocalPlayer.PlayerGui.RobloxMenuExxHub.Frame.Position = UDim2.new(1, -185, 0, 60)
+game:GetService("Players").LocalPlayer.PlayerGui.RobloxMenuExxHub.TextButton.Position = UDim2.new(1, -112, 0, 8)
+game:GetService("Players").LocalPlayer.PlayerGui.ServerToolsUI.ToggleButton.Position = UDim2.new(0, 170, 0, 8)
+game:GetService("Players").LocalPlayer.PlayerGui.ServerToolsUI.Frame.Position = UDim2.new(0, 115, 0, 60)
