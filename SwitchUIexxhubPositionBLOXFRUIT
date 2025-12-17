@@ -12,8 +12,8 @@ local pg = lp:WaitForChild("PlayerGui")
 
 pcall(function()
     pg.RobloxMenuExxHub.Frame.Position = UDim2.new(1, -182, 0, 60)
-    pg.RobloxMenuExxHub.TextButton.Position = UDim2.new(1, -106, 0, 11)
+    pg.RobloxMenuExxHub.TextButton.Position = UDim2.new(1, -106, 0, 12)
 
-    pg.TopBarServerHOPUI.ToggleButton.Position = UDim2.new(0, 170, 0, 11)
+    pg.TopBarServerHOPUI.ToggleButton.Position = UDim2.new(0, 170, 0, 12)
     pg.TopBarServerHOPUI.Frame.Position = UDim2.new(0, 115, 0, 60)
 end)
