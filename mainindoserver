@@ -1,5 +1,5 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/TopBarMenuLoaded"))()
-wait(0.1)
+wait(0.2)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/TopBarPositionUniversal/refs/heads/main/BloxFruitTopBarPosition"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/TopBarPositionUniversal/refs/heads/main/SurviveBikiniBottomTopBarPosition"))()
 
