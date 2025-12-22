@@ -1,3 +1,4 @@
+print("GLOBAL 🌎")
 ----- NEW VERSION LOAD BY CRAFTERBUILDER -----
 ---- 1.2 VERSION ----
 
@@ -7,4 +8,4 @@ end
 getgenv()._PanelMenuRan = true
 
 -- Load Script
-loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/MenuPanelUniversalGLBL"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/TopBarGLBL.lua"))()
