@@ -2,6 +2,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenu
 wait(0.2)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/TopBarPositionUniversal/refs/heads/main/BloxFruitTopBarPosition"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/TopBarPositionUniversal/refs/heads/main/SurviveBikiniBottomTopBarPosition"))()
+Loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/TopBarPositionUniversal/refs/heads/main/EXXHUB%20POSITION%20TOPBAR%20SURVIVE%20BIKINI%20BOTTOM"))()
+
+
+
+
+
+
+
+
+
+
 
 
 
