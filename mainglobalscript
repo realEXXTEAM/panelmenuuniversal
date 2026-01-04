@@ -1,5 +1,7 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/TopBarMenuLoadedGLBL"))()
 wait(0.2)
+
+--- Blox Fruit
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/TopBarPositionUniversal/refs/heads/main/BloxFruitTopBarPosition"))()
 
 --- Survive Bikini Bottom
