@@ -1,13 +1,3 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/TopBarMenuLoaded"))()
 wait(0.2)
-
-
-
-
-
-
-
-
-
-
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/FITUR%20TAMBAHAN%20FITUR%20EXXHUB"))()
