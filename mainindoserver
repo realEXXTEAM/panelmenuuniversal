@@ -1,11 +1,9 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/TopBarMenuLoaded"))()
-
 wait(0.2)
---- Blox Fruit
+-- Blox Fruit
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/TopBarPositionUniversal/refs/heads/main/BloxFruitTopBarPosition"))()
 loadstring(game:HttpGet("https://pastebin.com/raw/pwdN1JbL"))()
-
---- Survive Bikini Bottom
+-- Survive Bikini Bottom
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/TopBarPositionUniversal/refs/heads/main/SurviveBikiniBottomTopBarPosition"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/TopBarPositionUniversal/refs/heads/main/EXXHUB%20POSITION%20TOPBAR%20SURVIVE%20BIKINI%20BOTTOM"))()
 
