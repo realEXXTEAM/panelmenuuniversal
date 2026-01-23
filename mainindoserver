@@ -1,28 +1,40 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/TopBarMenuLoaded"))()
 wait(0.1)
 
-local SCRIPT_URL = "https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/mainindoserver"
+-- ANTI DOUBLE EXEC
+if getgenv().AUTOHOP_LOADED then return end
+getgenv().AUTOHOP_LOADED = true
 
-local function ExecScript()
-    local success, err = pcall(function()
-        loadstring(game:HttpGet(SCRIPT_URL))()
+local URL = "https://raw.githubusercontent.com/realEXXTEAM/panelmenuuniversal/refs/heads/main/mainindoserver"
+
+-- FUNCTION LOAD
+local function Load()
+    task.wait(1) -- penting
+    local ok, err = pcall(function()
+        loadstring(game:HttpGet(URL))()
     end)
-
-    if not success then
-        warn("Gagal load script:", err)
+    if not ok then
+        warn("LOAD ERROR:", err)
     end
 end
 
-ExecScript()
+-- LOAD SEKARANG
+Load()
 
-if queue_on_teleport then
-    queue_on_teleport([[
-        loadstring(game:HttpGet("]] .. SCRIPT_URL .. [["))()
+-- QUEUE SAAT TELEPORT
+local queue =
+    (syn and syn.queue_on_teleport) or
+    queue_on_teleport or
+    (fluxus and fluxus.queue_on_teleport) or
+    (getexecutorname and getexecutorname():lower():find("wave") and queue_on_teleport)
+
+if queue then
+    queue([[
+        if getgenv().AUTOHOP_LOADED then return end
+        getgenv().AUTOHOP_LOADED = true
+        task.wait(1)
+        loadstring(game:HttpGet("]] .. URL .. [["))()
     ]])
-elseif syn and syn.queue_on_teleport then
-    syn.queue_on_teleport([[
-        loadstring(game:HttpGet("]] .. SCRIPT_URL .. [["))()
-    ]])
+else
+    warn("Executor lu ga support queue_on_teleport")
 end
-
-
