@@ -1,3 +1,2 @@
 loadstring(game:HtppGet("https://pastebin.com/raw/TuEu8rj7"))()
-print("FITUR1AKTIF")
 loadstring(game:HttpGet("https://pastebin.com/raw/pwdN1JbL"))()
