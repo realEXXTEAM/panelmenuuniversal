@@ -34,7 +34,6 @@ local function createBubble(player, text)
     bg.AutomaticSize = Enum.AutomaticSize.Y
     bg.ZIndex = 1
 
-    -- Biar lebih oval kayak default Roblox
     local corner = Instance.new("UICorner")
     corner.CornerRadius = UDim.new(1, 0) 
     corner.Parent = bg
