@@ -1,1 +1,85 @@
-loadstring(game:HtppGet("https://pastebin.com/raw/TuEu8rj7"))()
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Camera = workspace.CurrentCamera
+local Debris = game:GetService("Debris")
+
+local MAX_DISTANCE = 25
+local BUBBLE_WIDTH = 250
+
+local function createBubble(player, text)
+    local char = player.Character
+    if not char then return end
+
+    local head = char:FindFirstChild("Head")
+    if not head then return end
+
+    local old = head:FindFirstChild("CustomBubble")
+    if old then old:Destroy() end
+
+    local bubble = Instance.new("BillboardGui")
+    bubble.Name = "CustomBubble"
+    bubble.Adornee = head
+    bubble.AlwaysOnTop = true
+    bubble.StudsOffset = Vector3.new(0, 2.5, 0) 
+    bubble.Size = UDim2.new(0, BUBBLE_WIDTH, 0, 50)
+    bubble.Parent = head
+    bubble.ClipsDescendants = false
+
+    local bg = Instance.new("Frame")
+    bg.Parent = bubble
+    bg.Size = UDim2.new(1, 0, 0, 0)
+    bg.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    bg.BackgroundTransparency = 0.15
+    bg.BorderSizePixel = 0
+    bg.AutomaticSize = Enum.AutomaticSize.Y
+    bg.ZIndex = 1
+
+    -- Biar lebih oval kayak default Roblox
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(1, 0) 
+    corner.Parent = bg
+
+    local padding = Instance.new("UIPadding")
+    padding.PaddingLeft = UDim.new(0, 12)
+    padding.PaddingRight = UDim.new(0, 12)
+    padding.PaddingTop = UDim.new(0, 6)
+    padding.PaddingBottom = UDim.new(0, 6)
+    padding.Parent = bg
+
+    local label = Instance.new("TextLabel")
+    label.Parent = bg
+    label.BackgroundTransparency = 1
+    label.Size = UDim2.new(1, 0, 0, 0)
+    label.Text = text
+    label.TextWrapped = true
+    label.AutomaticSize = Enum.AutomaticSize.Y
+    label.Font = Enum.Font.GothamMedium
+    label.TextSize = 17
+    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.ZIndex = 2
+
+    local conn
+    conn = RunService.RenderStepped:Connect(function()
+        if not bubble.Parent then
+            conn:Disconnect()
+            return
+        end
+
+        local dist = (Camera.CFrame.Position - head.Position).Magnitude
+        bubble.Enabled = dist < MAX_DISTANCE
+    end)
+
+    Debris:AddItem(bubble, 8)
+end
+
+local function hook(plr)
+    plr.Chatted:Connect(function(msg)
+        createBubble(plr, msg)
+    end)
+end
+
+for _, p in ipairs(Players:GetPlayers()) do
+    hook(p)
+end
+
+Players.PlayerAdded:Connect(hook)
