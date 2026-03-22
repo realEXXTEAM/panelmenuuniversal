@@ -1,1 +1,19 @@
+local bindable = Instance.new("BindableFunction")
+
+bindable.OnInvoke = function(response)
+    if response == "Yes" then
+        pcall(function()
+            loadstring(game:HttpGet("https://pastefy.app/E9chavWw/raw"))()
+        end)
+    end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Do You Wan't Try Test?",
+    Text = "you can first test next update on my TopBarMenu!",
+    Duration = 10,
+    Button1 = "Yes",
+    Button2 = "No",
+    Callback = bindable
+})
 
