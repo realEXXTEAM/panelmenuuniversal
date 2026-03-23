@@ -1,3 +1,30 @@
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local fileName = "TestUpdateLimit_" .. LocalPlayer.Name .. ".txt"
+
+local maxLimit = 5
+if LocalPlayer.Name == "CrafterMC10" or LocalPlayer.Name == "Toyotaracin" then
+    maxLimit = 100
+end
+
+local currentUses = 0
+
+if isfile and isfile(fileName) then
+    local data = readfile(fileName)
+    local num = tonumber(data)
+    if num then
+        currentUses = num
+    end
+end
+
+if currentUses >= maxLimit then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "System",
+        Text = "Limit reached (" .. maxLimit .. "/" .. maxLimit .. ")",
+        Duration = 5
+    })
+    return
+end
+
 local bindable = Instance.new("BindableFunction")
 
 bindable.OnInvoke = function(response)
@@ -5,6 +32,11 @@ bindable.OnInvoke = function(response)
         pcall(function()
             loadstring(game:HttpGet("https://pastefy.app/E9chavWw/raw"))()
         end)
+        
+        currentUses = currentUses + 1
+        if writefile then
+            writefile(fileName, tostring(currentUses))
+        end
     end
 end
 
@@ -16,4 +48,3 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Button2 = "No",
     Callback = bindable
 })
-
