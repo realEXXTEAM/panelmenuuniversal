@@ -25,6 +25,7 @@ if currentUses >= maxLimit then
     return
 end
 
+local sisaPercobaan = maxLimit - currentUses
 local bindable = Instance.new("BindableFunction")
 
 bindable.OnInvoke = function(response)
@@ -42,7 +43,7 @@ end
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Do You Wan't Try Test?",
-    Text = "you can first test next update on my TopBarMenu!",
+    Text = "you can first test next update on my TopBarMenu!\nMasa percobaan tersisa: " .. sisaPercobaan .. "x",
     Duration = 10,
     Button1 = "Yes",
     Button2 = "No",
