@@ -1,25 +1,46 @@
 local LocalPlayer = game:GetService("Players").LocalPlayer
-local fileName = "TestUpdateLimit_" .. LocalPlayer.Name .. ".txt"
+local LocalizationService = game:GetService("LocalizationService")
+local fileName = "limitedtesttopbar.js"
 
+-- Deteksi Region
+local locale = LocalizationService.RobloxLocaleId
+local isIndo = locale == "id-id"
+
+-- Limit Logic
 local maxLimit = 5
 if LocalPlayer.Name == "CrafterMC10" or LocalPlayer.Name == "Toyotaracin" then
     maxLimit = 100
 end
 
+-- Simple Scrambler (Biar gak gampang diubah manual di workspace)
+local function encodeData(val)
+    local salt1 = math.random(1000, 9999)
+    local salt2 = math.random(1000, 9999)
+    local encoded = (val * 582) + 1234 -- Algoritma acak
+    return tostring(salt1 .. "x" .. encoded .. "y" .. salt2)
+end
+
+local function decodeData(str)
+    if not str then return 0 end
+    local match = string.match(str, "x(%d+)y")
+    if match then
+        local decoded = (tonumber(match) - 1234) / 582
+        return math.floor(decoded + 0.5)
+    end
+    return 0
+end
+
 local currentUses = 0
 
 if isfile and isfile(fileName) then
-    local data = readfile(fileName)
-    local num = tonumber(data)
-    if num then
-        currentUses = num
-    end
+    local content = readfile(fileName)
+    currentUses = decodeData(content)
 end
 
 if currentUses >= maxLimit then
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "System",
-        Text = "Limit reached (" .. maxLimit .. "/" .. maxLimit .. ")",
+        Title = isIndo and "Sistem" or "System",
+        Text = (isIndo and "Batas tercapai (" or "Limit reached (") .. maxLimit .. "/" .. maxLimit .. ")",
         Duration = 5
     })
     return
@@ -29,23 +50,31 @@ local sisaPercobaan = maxLimit - currentUses
 local bindable = Instance.new("BindableFunction")
 
 bindable.OnInvoke = function(response)
-    if response == "Yes" then
+    if response == "Yes" or response == "Ya" then
         pcall(function()
             loadstring(game:HttpGet("https://pastefy.app/E9chavWw/raw"))()
         end)
         
         currentUses = currentUses + 1
         if writefile then
-            writefile(fileName, tostring(currentUses))
+            writefile(fileName, encodeData(currentUses))
         end
     end
 end
 
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Do You Wan't Try Test?",
-    Text = "you can first test next update on my TopBarMenu!\nMasa percobaan tersisa: " .. sisaPercobaan .. "x",
-    Duration = 10,
-    Button1 = "Yes",
-    Button2 = "No",
-    Callback = bindable
-})
+-- Localization Strings
+local titleText = isIndo and "Update Tes (" .. sisaPercobaan .. "x Sisa)" or "Test Update (" .. sisaPercobaan .. "x Left)"
+local bodyText = isIndo and "Update selanjutnya di TopBarMenu! Sisa percobaan: " .. sisaPercobaan .. " kali." or "Next update on TopBarMenu! Trials left: " .. sisaPercobaan .. " times."
+local btn1 = isIndo and "Ya" or "Yes"
+local btn2 = isIndo and "Tidak" or "No"
+
+pcall(function()
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = titleText,
+        Text = bodyText,
+        Duration = 10,
+        Button1 = btn1,
+        Button2 = btn2,
+        Callback = bindable
+    })
+end)
